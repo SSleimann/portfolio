@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.05rem;
+    color: #212121;
+}
+
+.hamb-btn {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    transition-duration: 0.2s;
+}
+
+.hamb-btn .hamb-icon {
+    transition-duration: 0.2s;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #212121;
+}
+
+.hamb-btn .hamb-icon:before {
+    transition-duration: 0.2s;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #212121;
+    content: "";
+    top: -10.5px;
+}
+
+.hamb-btn .hamb-icon:after {
+    transition-duration: 0.2s;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #212121;
+    content: "";
+    top: 10.5px;
+}
+
+.hamb-btn.open .hamb-icon {
+    transition-duration: 0.2s;
+    background: transparent;
+}
+
+.hamb-btn.open .hamb-icon:before {
+    transform: rotateZ(45deg) scaleX(1.25) translate(6px, 7px);
+}
+
+.hamb-btn.open .hamb-icon:after {
+    transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -8px);
+}
+
+.hamb-btn:hover {
+    cursor: pointer;
+}
+
+.color-bg::before, .color-bg::after  {
+    background-color: white !important;
+}
+
+.a-icon-main {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-main::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    top: -13px;
+    left: 0;
+    cursor: default;
+    transition: width .2s ease-in;
+    pointer-events: none;
+}
+
+.icon-main::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    bottom: -13px;
+    right: 0;
+    cursor: default;
+    transition: width .2s ease-in;
+    pointer-events: none;
+}
+
+.a-icon-main:hover >  .icon-main::after {
+    width: 0;
+    animation: reverse .2;
+}
+
+.a-icon-main:hover >  .icon-main::before {
+    width: 0;
+}
+
+.a-icon-main:hover > .icon-main {
+    scale: 1.10;
+}
+
+.image-project:after, .image-project:before {
+    position: absolute;
+    opacity: 0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    border-radius: 0.25rem;
+}
+
+.image-project::after {
+    content: '';
+    width: 100%; 
+    height:100%;
+    top: 0; 
+    left:0;
+    background:rgba(0,0,0,0.6);
+}
+
+.image-project:before {
+    content: attr(data-content);
+    font-weight: 500;
+    font-size:  large;
+    width: 100%;
+    color: #fff;
+    z-index: 1;
+    bottom: 50%;
+    transform: translateY(50%);
+    text-align: center;
+}
+
+.image-project:hover::before, .image-project:hover::after {
+    opacity: 1;
+}
+
+.navBtn-span {
+    position: relative; 
+}
+
+.navBtn-span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    background-color: #1d3557;
+    height: 4px;
+    transition: width .1s ease-in;
+    border-radius: 9999px;
+    width: 0;
+}
+
+.navBtn-a:hover > .navBtn-span::before {
+    width: 100%;
+}
