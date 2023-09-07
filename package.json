@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "npx tailwindcss build -i ./src/style.css -o ./src/css/style.css"
+    "build-css": "npx tailwindcss build -i ./src/style.css -o ./src/css/style.css",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": "https://github.com/SSleimann/portfolio.git",
   "keywords": [
